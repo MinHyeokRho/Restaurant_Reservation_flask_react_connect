@@ -91,9 +91,9 @@ function ViewTable() {
                     state: { 
                       table: selectedTable,
                       people: people,
-                      date: date,      // ✅ 추가
+                      date: date,     
                       time: apiTime
-                     }
+                    }
                   })
                 }
               >

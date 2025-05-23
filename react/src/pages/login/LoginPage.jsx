@@ -51,16 +51,17 @@ const LoginPage = () => {
         <form onSubmit={handleSubmit} className="auth-form">
           <label>이메일</label>
           <input
+            className="auth-input"
             type="text"
             value={username}
             onChange={(e) => setUsername(e.target.value)}
             placeholder="이메일 입력"
-            required
-          />
+            required/>
           <label>비밀번호</label>
-          <div className="password-wrapper">
+          <div className="auth-password-wrapper">
             <input
               type={showPassword ? 'text' : 'password'}
+              className="auth-input"
               value={password}
               onChange={(e) => setPassword(e.target.value)}
               placeholder="비밀번호 입력"
@@ -75,7 +76,7 @@ const LoginPage = () => {
             </button>
           </div>
           {error && <p className="error-message">{error}</p>}
-          <button type="submit">로그인</button>
+          <button type="submit" className="auth-submit">로그인</button>
         </form>
         <button className="signup-full" onClick={() => navigate('/signup')}>
           회원가입

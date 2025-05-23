@@ -68,9 +68,9 @@ function ReservationForm() {
     date: location.state.date,
     time: location.state.time,
     guests: formData.people,
-    name: formData.name,     // ✅ 포함
-    phone: formData.phone,   // ✅ 포함
-    card: formData.card      // ✅ 포함
+    name: formData.name,     
+    phone: formData.phone,   
+    card: formData.card     
   };
 
   try {

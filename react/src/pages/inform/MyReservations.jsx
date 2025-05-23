@@ -7,7 +7,6 @@ function MyReservations() {
 
   const [reservations, setReservations] = useState([]);
 
-  // ✅ 실제 예약 목록 조회
   useEffect(() => {
     const userId = localStorage.getItem('user_id');
     if (!userId) return;
@@ -28,7 +27,6 @@ function MyReservations() {
       .catch(err => console.error('예약 목록 불러오기 실패:', err));
   }, []);
 
-  // ✅ 실제 예약 취소 요청
   const handleCancel = async (res) => {
     const today = new Date();
     const resDate = new Date(res.date);
@@ -40,7 +38,7 @@ function MyReservations() {
     const isPast = resDate.getTime() < today.getTime();
 
     if (isSameDay || isPast) {
-      alert('예약 당일에는 취소할 수 없습니다.');
+      alert('24시간 이내에는 취소할 수 없습니다.');
       return;
     }
 

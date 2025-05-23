@@ -83,13 +83,13 @@ const HomePage = () => {
             return;
 
           }
-        navigate('/view-table', {
-          state: {
-            date: selectedDate.toISOString().split('T')[0],
-            time: selectedTime,
-            people: peopleCount,
-          },
-        })
+          navigate('/view-table', {
+            state: {
+              date: selectedDate.toLocaleDateString('sv-SE'),
+              time: selectedTime,
+              people: peopleCount,
+            },
+          });
         }}>
         예약 가능 테이블 보기
         </button>

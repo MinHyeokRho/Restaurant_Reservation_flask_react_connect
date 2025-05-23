@@ -20,7 +20,7 @@ const InfoPage = () => {
         <p><strong>주소:</strong> 서울특별시 중구 필동로 1길 30</p>
         <p><strong>전화번호:</strong> 02-1234-5678</p>
         <p><strong>운영시간:</strong> 매일 11:00 ~ 22:00</p>
-        <p><strong>휴무일:</strong> 매주 월요일</p>
+        <p><strong>휴무일:</strong> 연중무휴</p>
       </div>
     </div>
   );

@@ -15,9 +15,11 @@ const MainHeader = () => {
 
   const handleLogout = () => {
     localStorage.removeItem('user_id');
+    localStorage.removeItem('username'); 
+    setUsername('');
     navigate('/');
   };
-
+  
   return (
     <div className="header-outer">
       <div className="header-inner">

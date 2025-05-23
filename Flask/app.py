@@ -129,7 +129,7 @@ def get_available_tables():
         for table in available_tables
     ]
 
-    # ✅ 예약된 테이블 ID도 함께 응답
+    # 예약된 테이블 ID도 함께 응답
     return jsonify({
         "available_tables": available_table_list,
         "reserved_table_ids": reserved_ids
@@ -186,7 +186,7 @@ def reserve():
     user_id = data.get('user_id')
     time_slot = data.get('time')
 
-    # ✅ 문자열 필드 유효성 검사
+    # 문자열 필드 유효성 검사
     required_fields = [name, phone, card, date_str]
     if any(field is None or str(field).strip() == '' for field in required_fields):
         return Response(
@@ -195,7 +195,7 @@ def reserve():
             mimetype='application/json'
         )
 
-    # ✅ 숫자 필드 유효성 검사
+    # 숫자 필드 유효성 검사
     if table_id is None or guests is None or user_id is None:
         return Response(
             response=json.dumps({"error": "필수 숫자 값이 누락되었습니다."}, ensure_ascii=False),
@@ -289,7 +289,7 @@ def cancel_reservation(reservation_id):
         )
 
     try:
-        user_id = int(user_id)  # ✅ 이 한 줄로 타입 문제 해결
+        user_id = int(user_id)  
     except ValueError:
         return Response(
             response=json.dumps({"error": "user_id는 정수여야 합니다."}, ensure_ascii=False),
